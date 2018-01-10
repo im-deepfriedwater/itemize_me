@@ -1,0 +1,30 @@
+.champ-img-performance {
+    width: 20%;
+}
+
+.win-rate {
+    float: right;
+}
+
+.win {
+    color:#2e8441;
+    font-weight: bold;
+}
+
+.lose {
+    color:#db5329;
+    font-weight: bold;
+}
+
+.footer-text {
+    color:#FFFFFF;
+}
+
+#patchText {
+    color:#FFFFFF;
+}
+
+#externalLink {
+    text-decoration: none;
+    color: white;
+}

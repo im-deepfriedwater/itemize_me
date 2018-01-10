@@ -1,0 +1,102 @@
+<!--
+    Compare the fixture to the actual web page. Note how the fixture _distills_ the content to just the essential
+    elements for the app. This is why they are copies. The web page can be laid out or redesigned as much as you like,
+    but as long as the elements remain the same, this fixture will remain valid.
+
+    Of course, if the functionality changes to the point that the controller JavaScript needs to also change, then the
+    fixture would have to be revised.
+-->
+<input type="text" id="search-term">
+<button id="search-button" disabled></button>
+
+<div class="result-container"></div>
+
+<div class="dropdown align-middle">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
+        Select Role
+    </button>
+    <div class="dropdown-menu">
+        <a class="dropdown-item champ-role-selector" id="dropdownSupport">Support</a>
+        <a class="dropdown-item champ-role-selector" id="dropdownADC">ADC</a>
+        <a class="dropdown-item champ-role-selector" id="dropdownMid">Mid</a>
+        <a class="dropdown-item champ-role-selector" id="dropdownJungle">Jungle</a>
+        <a class="dropdown-item champ-role-selector" id="dropdownTop">Top</a>
+    </div>
+</div>
+
+<div class="row result-container">
+</div>
+
+<button id="search-button" class="btn btn-primary" disabled>Itemize_Me!</button>
+
+<table class="table table-bordered table-hover" id="performanceTable">
+    <thead>
+        <tr>
+            <th scope="col">Role</th>
+            <th scope="col" class="win">Highest</th>
+            <th scope="col" class="lose">Lowest</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Top</th>
+            <td><img class="champ-img-performance" id="topBestImg"/>
+                <b id="topWinName"></b>
+                <div id="topBest" class="win win-rate"></div>
+            </td>
+            <td><img class="champ-img-performance" id="topWorseImg"/>
+                <b id="topLoseName"></b>
+                <div id="topWorst" class="lose win-rate"></div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Jungle</th>
+            <td><img class="champ-img-performance" id="jungleBestImg"/>
+                <b id="jungleWinName"></b>
+                <div id="jungleBest" class="win win-rate"></div>
+            </td>
+            <td><img class="champ-img-performance" id="jungleWorseImg"/>
+                <b id="jungleLoseName"></b>
+                <div id="jungleWorst" class="lose win-rate"></div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Mid</th>
+            <td><img class="champ-img-performance" id="midBestImg"/>
+                <b id="midWinName"></b>
+                <div id="midBest" class="win win-rate"></div>
+            </td>
+            <td><img class="champ-img-performance" id="midWorseImg"/>
+                <b id="midLoseName"></b>
+                <div id="midWorst" class="lose win-rate"></div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Support</th>
+            <td><img class="champ-img-performance" id="supportBestImg"/>
+                <b id="supportWinName"></b>
+                <div id="supportBest" class="win win-rate"></div>
+            </td>
+            <td><img class="champ-img-performance" id="supportWorseImg"/>
+                <b id="supportLoseName"></b>
+                <div id="supportWorst" class="lose win-rate"></div>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">ADC</th>
+            <td><img class="champ-img-performance" id="adcBestImg"/>
+                <b id="adcWinName"></b>
+                <div id="adcBest" class="win win-rate"></div>
+            </td>
+            <td><img class="champ-img-performance" id="adcWorseImg"/>
+                <b id="adcLoseName"></b>
+                <div id="adcWorst" class="lose win-rate"></div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<nav class="navbar sticky-bottom navbar-light bg-dark" id="footer">
+    <div class="footer-text" id="infoText"></div>
+    <div class="footer-text" id="patchText"></div>
+</nav>

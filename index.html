@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Itemize_Me</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+
+<body style="background-color:#d9dadc;">
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-dark justify-content-between" style="background-color:#313131">
+            <a class="navbar-brand" href="#">Itemize_Me</a>
+            <div class="float-right" id="rotating_header_text" style="color:#78808c;">For prepping your pocket pick Teemo</div>
+        </nav>
+    </header>
+
+    <div class="jumbotron jumbotron-fluid" style="height:50%; background-color:#3c4f63">
+        <div class="container">
+            <div class="row">
+                <div class="column" style="color:white;">
+                    <h1 class="display-3" style="color:white;">Itemize_Me</h1>
+                    <p class="lead">Haven't played in months? We've got your back.</p>
+                    <hr class="my-4">
+                    <p>Itemize_Me provides specified popular League of Legends item builds using statistical data kindly provided by Champion.gg. All item sets are soon to be avaliable for download to be used in your League of Legends cilent for an immediate boost to Challenger.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3>How Should I Itemize?</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group mt-3">
+                    <label for="search-term">Which Champion should we Itemize for you?</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <input type="text" class="form-control" id="search-term">
+            </div>
+            <div class="col-4">
+                <div class="dropdown align-middle">
+                    <button class="btn btn-secondary dropdown-toggle align-middle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select Role
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item champ-role-selector" id="dropdownSupport">Support</a>
+                        <a class="dropdown-item champ-role-selector" id="dropdownADC">ADC</a>
+                        <a class="dropdown-item champ-role-selector" id="dropdownMid">Mid</a>
+                        <a class="dropdown-item champ-role-selector" id="dropdownJungle">Jungle</a>
+                        <a class="dropdown-item champ-role-selector" id="dropdownTop">Top</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" style="margin-top:20px;">
+            <div class="col-6">
+                <div class="form-group">
+                    <button id="search-button" class="btn btn-primary" disabled>Itemize_Me!</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row result-container">
+        </div>
+
+        <hr>
+        <br>
+        <h3><i>Win Rates:</i></h3>
+        <div class="row">
+            <div class="col-6">
+                <table class="table table-bordered table-hover" id="performanceTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">Role</th>
+                            <th scope="col" class="win">Highest</th>
+                            <th scope="col" class="lose">Lowest</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Top</th>
+                            <td><img class="champ-img-performance" id="topBestImg"/>
+                                <b id="topWinName"></b>
+                                <div id="topBest" class="win win-rate"></div>
+                            </td>
+                            <td><img class="champ-img-performance" id="topWorseImg"/>
+                                <b id="topLoseName"></b>
+                                <div id="topWorst" class="lose win-rate"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Jungle</th>
+                            <td><img class="champ-img-performance" id="jungleBestImg"/>
+                                <b id="jungleWinName"></b>
+                                <div id="jungleBest" class="win win-rate"></div>
+                            </td>
+                            <td><img class="champ-img-performance" id="jungleWorseImg"/>
+                                <b id="jungleLoseName"></b>
+                                <div id="jungleWorst" class="lose win-rate"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Mid</th>
+                            <td><img class="champ-img-performance" id="midBestImg"/>
+                                <b id="midWinName"></b>
+                                <div id="midBest" class="win win-rate"></div>
+                            </td>
+                            <td><img class="champ-img-performance" id="midWorseImg"/>
+                                <b id="midLoseName"></b>
+                                <div id="midWorst" class="lose win-rate"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Support</th>
+                            <td><img class="champ-img-performance" id="supportBestImg"/>
+                                <b id="supportWinName"></b>
+                                <div id="supportBest" class="win win-rate"></div>
+                            </td>
+                            <td><img class="champ-img-performance" id="supportWorseImg"/>
+                                <b id="supportLoseName"></b>
+                                <div id="supportWorst" class="lose win-rate"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">ADC</th>
+                            <td><img class="champ-img-performance" id="adcBestImg"/>
+                                <b id="adcWinName"></b>
+                                <div id="adcBest" class="win win-rate"></div>
+                            </td>
+                            <td><img class="champ-img-performance" id="adcWorseImg"/>
+                                <b id="adcLoseName"></b>
+                                <div id="adcWorst" class="lose win-rate"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar sticky-bottom navbar-light bg-dark" id="footer">
+        <div class="footer-text" id="infoText">170 Champs Analyzed as of 12-15-15</div>
+        <a class="footer-text" id="externalLink" href="http://www.champion.gg">@champion.gg</a>
+        <div class="footer-text" id="patchText">Patch 7.15</div>
+    </nav>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+    <script src="itemize.js"></script>
+    <script>
+        window.Itemize.init()
+    </script>
+</body>
+
+</html>
