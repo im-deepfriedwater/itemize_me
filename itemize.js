@@ -10,13 +10,14 @@
 (() => {
     window.Itemize = {
         init: () => {
+            const version = '8.31.1';
             const apiKey = "32be28e129c205dc540785fc0dd8f45f";
 
             const relayURL = "http://api.champion.gg/v2";
 
             const championAPI = `${relayURL}/champions/`;
-            const imageURL = 'http://ddragon.leagueoflegends.com/cdn/7.21.1/img/item/';
-            const championImageURL = 'http://ddragon.leagueoflegends.com/cdn/7.21.1/img/champion/';
+            const imageURL = `http://ddragon.leagueoflegends.com/cdn/${version}/img/item/`;
+            const championImageURL = `http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/`;
 
             const overallAPI = `${relayURL}/overall/`;
 
