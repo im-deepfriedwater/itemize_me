@@ -49,8 +49,6 @@
                 );
             };
 
-
-
             $.getJSON(overallAPI, {api_key: apiKey}).done((result) => {
                 let positionsQueryData = result[0].positions;
                 $.getJSON("/static_data/champion.json").done(championJSON => {
