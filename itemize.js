@@ -46,7 +46,7 @@
 
             $.getJSON(overallAPI, {api_key: apiKey}).done((result) => {
                 let positionsQueryData = result[0].positions;
-                $.getJSON("itemize_me/static_data/champion.json").done(championJSON => {
+                $.getJSON("/itemize_me/static_data/champion.json").done(championJSON => {
                     let championHash = championJSON.data;
                     let idToChampionHash = {};
 
@@ -111,7 +111,7 @@
 
                 resultContainer.empty().append($('<h1>Loading... Sit tight!</h1>'));
 
-                $.getJSON("itemize_me/static_data/champion.json").done(championJSON => {
+                $.getJSON("/itemize_me/static_data/champion.json").done(championJSON => {
                     let championHash = championJSON.data;
                     let inputForHash = searchTerm.val().toLowerCase().replace(/ /g, '');
                     let formattedInput = searchTerm.val().charAt(0).toUpperCase() +
@@ -225,7 +225,7 @@
                         const startingItemContainer = $('.start-container');
                         const finalItemContainer = $('.final-container');
 
-                        $.getJSON('itemize_me/static_data/item.json').done((itemJSON) => {
+                        $.getJSON('/itemize_me/static_data/item.json').done((itemJSON) => {
                             let itemHash = itemJSON.data;
                             startingItemContainer.empty().append(
                                 startingItemHashArray.map(item =>
