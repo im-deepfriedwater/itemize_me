@@ -10,7 +10,7 @@
 (() => {
     window.Itemize = {
         init: () => {
-            const version = '8.31.1';
+            const version = '8.3.1';
             const apiKey = "32be28e129c205dc540785fc0dd8f45f";
 
             const relayURL = "http://api.champion.gg/v2";
