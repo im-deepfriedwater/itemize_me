@@ -1,11 +1,6 @@
-/*
-   This is a very simple example of a web front end for a publicly available web service.
-   Due to its pedagogical nature, comments are more elaborate than they typically need to
-   be, or may even be present when no developer explanation would usually be necessary.
-
-   Further, this example uses JavaScript ES6 syntax.
-*/
 "use strict";
+
+/* Credit to @dondi for providing some of the starter code.*/
 
 // Yes, this is a "global." But it is a single entry point for all of the code in the module,
 // and in its role as the overall controller code of the page, this is one of the acceptable
@@ -51,7 +46,7 @@
 
             $.getJSON(overallAPI, {api_key: apiKey}).done((result) => {
                 let positionsQueryData = result[0].positions;
-                $.getJSON("/static_data/champion.json").done(championJSON => {
+                $.getJSON("itemize_me/static_data/champion.json").done(championJSON => {
                     let championHash = championJSON.data;
                     let idToChampionHash = {};
 
@@ -116,7 +111,7 @@
 
                 resultContainer.empty().append($('<h1>Loading... Sit tight!</h1>'));
 
-                $.getJSON("/static_data/champion.json").done(championJSON => {
+                $.getJSON("itemize_me/static_data/champion.json").done(championJSON => {
                     let championHash = championJSON.data;
                     let inputForHash = searchTerm.val().toLowerCase().replace(/ /g, '');
                     let formattedInput = searchTerm.val().charAt(0).toUpperCase() +
@@ -230,7 +225,7 @@
                         const startingItemContainer = $('.start-container');
                         const finalItemContainer = $('.final-container');
 
-                        $.getJSON('/static_data/item.json').done((itemJSON) => {
+                        $.getJSON('itemize_me/static_data/item.json').done((itemJSON) => {
                             let itemHash = itemJSON.data;
                             startingItemContainer.empty().append(
                                 startingItemHashArray.map(item =>
