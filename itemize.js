@@ -17,9 +17,9 @@
         init: () => {
             const apiKey = "32be28e129c205dc540785fc0dd8f45f";
 
-            const relayURL = "http://localhost:3000";
+            const relayURL = "http://api.champion.gg/v2";
 
-            const championAPI = `${relayURL}/champions/`;  // a result of using node-http-relay
+            const championAPI = `${relayURL}/champions/`;
             const imageURL = 'http://ddragon.leagueoflegends.com/cdn/7.21.1/img/item/';
             const championImageURL = 'http://ddragon.leagueoflegends.com/cdn/7.21.1/img/champion/';
 
